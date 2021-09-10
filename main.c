@@ -7,8 +7,8 @@ volatile unsigned int i = 0;
  */
 int main(void)
 {
-    // Stop watchdog timer. This line of code is needed at the beginning of most MSP430 projects.
-    // This line of code turns off the watchdog timer, which can reset the device after a certain period of time.
+  // Stop watchdog timer. This line of code is needed at the beginning of most MSP430 projects.
+  // This line of code turns off the watchdog timer, which can reset the device after a certain period of time.
 	WDTCTL = WDTPW + WDTHOLD;
 
 	/*  P4DIR is a register that configures the direction or a port pin as an output or an input
@@ -26,7 +26,8 @@ int main(void)
 	 *  P4DIR |= 0x01 is equivalent to P4DIR = P4DIR | 0x01
 	 */
 	P4DIR |= 0x01;
-	P1DIR |= 00000011;
+	P1DIR |= 0x01;
+	P5DIR |= 00100000;
 
 	/*
 	 * Disable GPIo power-on default high-impedance mode to activate previously configured port settings
@@ -40,10 +41,13 @@ int main(void)
 	     * Toggle port 4, pin 0 using XOR (^)
 	     * P4OUT is another register which holds the status of the LED, 1 = on, 0 = off
 	     * P4OUT ^= 0x01 is equivalent to P4OUT = P4OUT ^ 0x01
-	     * Effectively, P4OUT = 1 ^ 1 -> 0 or P4OUT = 0 ^ 1 -> 0
+	     * Effectively, P4OUT = 1 ^ 1 -> 0 or P4OUT = 0 ^ 1 -> 1
+	     * This is because ^ is a XOR operation meaning it changes only when the bits are different
+	     * This, in turn, has the effect of toggling the LED every cycle
 	     */
-	    P4OUT ^= 0x01;
-	    P1OUT ^= 00000011;
+	    P4OUT ^= 00000001;
+	    P1OUT ^= 00000001;
+	    P5OUT ^= 00100000;
 	    __delay_cycles(1000000);
 	}
 

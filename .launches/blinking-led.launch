@@ -4,7 +4,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM.MSP430FR4133.ccxml.TI MSP430 USB1/MSP430" value="${build_artifact:blinking-led}"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.MSP430FR4133.ccxml.TI MSP430 USB1/MSP430" value="blinking-led"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:blinking-led}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.MSP430FR4133.ccxml.TI MSP430 USB1/MSP430" value="/home/jimspeir/Documents/ti/msp430/blinking-led/Debug/blinking-led.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.MSP430FR4133.ccxml.TI MSP430 USB1/MSP430" value="/home/jimspeir/Projects/blinking-led/Debug/blinking-led.out"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/blinking-led"/>
 </listAttribute>
